@@ -13,15 +13,18 @@ class TabBarViewController: UITabBarController {
         super.viewDidLoad()
 
         let homePageVC = HomePageViewController()
-                let profileVC = SettingsViewController()
+        let profileVC = SettingsViewController()
+        let dictionaryVC = DI_ctionaryViewController()
                 
-                let homePageNavVC = UINavigationController(rootViewController: homePageVC)
-                let profileNavVC = UINavigationController(rootViewController: profileVC)
+        let homePageNavVC = UINavigationController(rootViewController: homePageVC)
+        let profileNavVC = UINavigationController(rootViewController: profileVC)
+        let dictionaryNavVC = UINavigationController(rootViewController: dictionaryVC)
                 
-                homePageNavVC.tabBarItem = UITabBarItem(title: "Ana Sayfa", image: UIImage(systemName: "house"), tag: 0)
-                profileNavVC.tabBarItem = UITabBarItem(title: "Profil", image: UIImage(systemName: "person"), tag: 1)
+        homePageNavVC.tabBarItem = UITabBarItem(title: "Ana Sayfa", image: UIImage(systemName: "house"), tag: 0)
+        profileNavVC.tabBarItem = UITabBarItem(title: "Profil", image: UIImage(systemName: "person"), tag: 1)
+        dictionaryVC.tabBarItem = UITabBarItem(title: "Dictionary", image: UIImage(systemName: "book"), tag: 2)
                 
-                viewControllers = [homePageNavVC, profileNavVC]
+        viewControllers = [homePageNavVC, dictionaryNavVC,profileNavVC]
             }    
     
 

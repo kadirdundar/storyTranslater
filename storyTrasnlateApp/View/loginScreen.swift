@@ -67,8 +67,6 @@ class LoginView: UIView {
             button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
             button.translatesAutoresizingMaskIntoConstraints = false
             button.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
-            button.contentMode = .scaleAspectFit
-            button.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 16)
             return button
         }()
     
@@ -76,8 +74,11 @@ class LoginView: UIView {
         let button = UIButton(type: .custom)
         let googleImage = UIImage(named: "sign-in-with-google-icon-3.jpg")
         button.setImage(googleImage, for: .normal)
-        //button.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.layer.cornerRadius = 5
+        button.contentMode = .scaleAspectFit
+        
+        //button.backgroundColor = .systemBlue
         return button
     }()
 
@@ -129,17 +130,11 @@ class LoginView: UIView {
             
             googleButton.topAnchor.constraint(equalTo: signUpButton.bottomAnchor,constant: 16),
             googleButton.centerXAnchor.constraint(equalTo: centerXAnchor),
-            //googleButton.heightAnchor.constraint(equalToConstant: 50),
-                        
-           /* confirmPasswordTextField.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 16),
-            confirmPasswordTextField.leftAnchor.constraint(equalTo: leftAnchor, constant: 32),
-            confirmPasswordTextField.rightAnchor.constraint(equalTo: rightAnchor, constant: -32),
-            confirmPasswordTextField.heightAnchor.constraint(equalToConstant: 50),
-            
-           submitButton.topAnchor.constraint(equalTo: confirmPasswordTextField.bottomAnchor, constant: 24), submitButton.leftAnchor.constraint(equalTo: leftAnchor, constant: 32),
-            submitButton.rightAnchor.constraint(equalTo: rightAnchor, constant: -32),
-            submitButton.heightAnchor.constraint(equalToConstant: 60),
-            */
+            googleButton.leftAnchor.constraint(equalTo: leftAnchor, constant: 32),
+            googleButton.rightAnchor.constraint(equalTo: rightAnchor, constant: -32),
+
+          
+        
       
         ])
     }
@@ -174,7 +169,5 @@ class LoginView: UIView {
 
     @objc private func handleSignUp() {
         guard let email = emailTextField.text, let password = passwordTextField.text else { return }
-
-        // TODO: Perform sign-up action with email and password
     }
 }

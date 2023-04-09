@@ -7,9 +7,7 @@
 
 import UIKit
 class firstScreen: UIViewController {
-  let emailTextField = UITextField()
-  let passwordTextField = UITextField()
-  let loginButton = UIButton()
+
   let viewModel = LoginViewModel()
   let exview = LoginView()
   

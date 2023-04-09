@@ -1,7 +1,6 @@
 {
   "images" : [
     {
-      "filename" : "sign-in-with-google-icon-3.jpg.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
@@ -10,6 +9,7 @@
       "scale" : "2x"
     },
     {
+      "filename" : "GButton.jpg",
       "idiom" : "universal",
       "scale" : "3x"
     }
