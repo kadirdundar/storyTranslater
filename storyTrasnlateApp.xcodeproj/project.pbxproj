@@ -24,6 +24,7 @@
 		3F7AA7CE29E0BCEE002DB07B /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7AA7CD29E0BCEE002DB07B /* TabBarViewController.swift */; };
 		3F7AA7D029E0C00E002DB07B /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7AA7CF29E0C00E002DB07B /* HomePageViewController.swift */; };
 		3F7AA7D229E0C05C002DB07B /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7AA7D129E0C05C002DB07B /* SettingsViewController.swift */; };
+		3FB38AEB29E44FB2002048E9 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB38AEA29E44FB2002048E9 /* DetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		3F7AA7CD29E0BCEE002DB07B /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		3F7AA7CF29E0C00E002DB07B /* HomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
 		3F7AA7D129E0C05C002DB07B /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		3FB38AEA29E44FB2002048E9 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				3F46375D29DF06C900447CFA /* LogInViewModel.swift */,
+				3FB38AEA29E44FB2002048E9 /* DetailViewModel.swift */,
 			);
 			name = "VİewModel";
 			path = "VİewModel";
@@ -218,6 +221,7 @@
 				3F0FD8E929DC5F2600210A2C /* SignInView.swift in Sources */,
 				3F138D5729E2D1C6009A2DB6 /* DetailView.swift in Sources */,
 				3F138D5529E2D191009A2DB6 /* DetailViewController.swift in Sources */,
+				3FB38AEB29E44FB2002048E9 /* DetailViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

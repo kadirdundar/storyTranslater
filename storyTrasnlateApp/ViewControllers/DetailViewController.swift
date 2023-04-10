@@ -20,7 +20,9 @@ class DetailViewController: UIViewController {
     func setupUI(){
         
         self.view.addSubview(exview)
-        
+        self.exview.backgroundColor = .systemBackground
+
+        exview.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             exview.topAnchor.constraint(equalTo: view.topAnchor),
             exview.bottomAnchor.constraint(equalTo: view.bottomAnchor),
@@ -28,5 +30,4 @@ class DetailViewController: UIViewController {
             exview.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ])
     }
-
 }

@@ -19,17 +19,19 @@ class detailView: UIView {
     private let firstText : UITextView = {
         let firstText = UITextView()
         firstText.translatesAutoresizingMaskIntoConstraints = false
-        firstText.textColor = .white
-        firstText.text = "askjdnljasnfsanflanfljanfanfalsfnlsfnljfnljasfnljanflsakmfdşaksnfşansfafkkfknaşfnkafsşanfşka"
+        firstText.textColor = .black
+        firstText.text = "askjdnljasnfsanflanflj anfanfalsfnlsfnljfnljasfnljanfls. akmfdşaksnfş ansfafkkfknaşfnkafsşanfşka .askjdnljasnfsanflanflj anfanfalsfnlsfnljfnljasfnljanfls. akmfdşaksnfş ansfafkkfknaşfnkafsşanfşka"
+        firstText.font = .boldSystemFont(ofSize: 20)
         
         return firstText
     }()
     private let secondText : UITextView = {
         let secondText = UITextView()
         secondText.translatesAutoresizingMaskIntoConstraints = false
-        secondText.textColor = .white
-        secondText.text = "askjdnljasnfsanflanfljanfanfalsfnlsfnljfnljasfnljanflsakmfdşaksnfşansfafkkfknaşfnkafsşanfşka"
-        
+        secondText.textColor = .black
+        secondText.text = "askjdnljasnfsanflanflj anfanfalsfnlsfnljfnl. jasfnljanflsakmfdşaksnfşansfafkk. fknaşfnkafsşanfşka askjdnljasnfsanflanflj anfanfalsfnlsfnljfnl .jasfnljanflsakmfdşaksnfşansfafk"
+        secondText.font = .boldSystemFont(ofSize: 20)
+
         return secondText
     }()
     
