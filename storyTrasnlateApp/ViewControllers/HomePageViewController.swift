@@ -76,7 +76,7 @@ extension HomePageViewController:  UITableViewDataSource, UITableViewDelegate {
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let detailVC = DetailViewController() // Geçiş yapmak istediğiniz ViewController'ın instance'ını oluşturun
+        let detailVC = ViewController() // Geçiş yapmak istediğiniz ViewController'ın instance'ını oluşturun
         detailVC.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(detailVC, animated: true)
         

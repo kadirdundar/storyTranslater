@@ -6,7 +6,15 @@
 //
 
 import UIKit
+
+class CustomTextView: UITextView {
+    var sentenceIndex: Int?
+}
+
+/*import UIKit
 class detailView: UIView {
+    private let viewModel = detailViewModel()
+    
     private let stackView : UIStackView = {
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
@@ -38,6 +46,15 @@ class detailView: UIView {
     override init(frame: CGRect) {
         super .init(frame: frame)
         
+        viewModel.firstText = firstText
+        viewModel.secondText = secondText
+        
+        let longPressGesture1 = UILongPressGestureRecognizer(target: viewModel, action: #selector(viewModel.textViewLongPressed(_:)))
+        firstText.addGestureRecognizer(longPressGesture1)
+        
+        let longPressGesture2 = UILongPressGestureRecognizer(target: viewModel, action: #selector(viewModel.textViewLongPressed(_:)))
+                secondText.addGestureRecognizer(longPressGesture2)
+        
         addSubview(stackView)
         stackView.backgroundColor = .systemBlue
         stackView.addArrangedSubview(firstText)
@@ -57,3 +74,4 @@ class detailView: UIView {
     }
     
 }
+*/
