@@ -4,235 +4,82 @@
 //
 //  Created by Kadir Dündar on 9.04.2023.
 //
-
 import UIKit
 
 class ViewController: UIViewController, UITextViewDelegate {
     
-    private let viewModel = TextViewModel()
-    
-    private let turkishTextView: UITextView = {
-        let textView = UITextView()
-        textView.isEditable = false
-        textView.font = UIFont.systemFont(ofSize: 16)
-        textView.translatesAutoresizingMaskIntoConstraints = false
-
-        return textView
+    let textView: UITextView = {
+        let tv = UITextView()
+        tv.translatesAutoresizingMaskIntoConstraints = false
+        tv.isEditable = false
+        tv.isSelectable = true
+        tv.dataDetectorTypes = .all
+        tv.text = "Once upon a time, there was a young woman named Lily who lived in a small village nestled in the mountains. Lily was a kind and hardworking person who spent most of her days tending to the farm that her family owned.  One day, while walking through the woods, Lily stumbled upon an old, abandoned cottage. Curious, she decided to venture inside and found a dusty old book lying on the floor. As she began to read the book, she realized that it was a book of magic spells.  Excited by the discovery, Lily decided to try out one of the spells. She recited the incantation and suddenly found herself surrounded by a swirl of bright colors. When the colors cleared, she found herself standing in a beautiful garden, filled with flowers of every color and shape.   Over the next few weeks, Lily spent all of her free time in the magical garden. She picked flowers, explored hidden paths, and even had tea parties with the garden's resident fairies.   However, one day, Lily realized that the magic was beginning to fade. She knew that she couldn't stay in the garden forever and that she had to return to her normal life. With a heavy heart, she said goodbye to her fairy friends and recited the spell to return home.  When she arrived back at the old cottage, Lily found that the book was gone. She searched everywhere but couldn't find it. Disappointed, she returned to her farm and resumed her daily routine.  Years later, when Lily was an old woman, she was walking through the woods once again. As she passed by the old cottage, she heard a faint whisper. Following the sound, she found herself standing in front of a small, hidden doorway. Inside, she found the book of spells, lying on a shelf. Lily smiled as she realized that the magic had never really left her, and that the garden would always be a part of her life, no matter what."
+        tv.isEditable = false
+        tv.layer.shadowColor = UIColor.black.cgColor
+        tv.layer.shadowOffset = CGSize(width: 0, height: 2)
+        tv.layer.shadowOpacity = 0.5
+        tv.layer.shadowRadius = 2
+        tv.font = UIFont.boldSystemFont(ofSize: 25)
+        tv.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 20, right: 0)
+        
+        
+        
+        return tv
     }()
     
-    private let englishTextView: UITextView = {
-        let textView = UITextView()
-        textView.isEditable = false
-        textView.font = UIFont.systemFont(ofSize: 16)
-        textView.textColor = .black
-        textView.translatesAutoresizingMaskIntoConstraints = false
-        return textView
-    }()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
-        turkishTextView.delegate = self
-        englishTextView.delegate = self
+        textView.delegate = self
+        setupUI()
         
-        view.addSubview(turkishTextView)
-        view.addSubview(englishTextView)
+        
+    }
+    
+    fileprivate func setupUI() {
+        view.addSubview(textView)
+        
         
         NSLayoutConstraint.activate([
-            englishTextView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            englishTextView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            englishTextView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            englishTextView.heightAnchor.constraint(equalToConstant: 400),
-
-            turkishTextView.heightAnchor.constraint(equalToConstant: 400),
-            turkishTextView.topAnchor.constraint(equalTo: englishTextView.bottomAnchor, constant: 20),
-            turkishTextView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            turkishTextView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            turkishTextView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
-        ])
-      
-        
-        turkishTextView.text = viewModel.turkishText
-        englishTextView.text = viewModel.englishText
-        
-        let turkishTapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTurkishTap(_:)))
-        turkishTextView.addGestureRecognizer(turkishTapGesture)
-        
-        let englishTapGesture = UITapGestureRecognizer(target: self, action: #selector(handleEnglishTap(_:)))
-        englishTextView.addGestureRecognizer(englishTapGesture)
-    }
-    
-    @objc private func handleTurkishTap(_ sender: UITapGestureRecognizer) {
-        let textView = sender.view as! UITextView
-        let layoutManager = textView.layoutManager
-        var location = sender.location(in: textView)
-        location.x -= textView.textContainerInset.left
-        location.y -= textView.textContainerInset.top
-        let charIndex = layoutManager.characterIndex(for: location, in: textView.textContainer, fractionOfDistanceBetweenInsertionPoints: nil)
-        let wordRange = viewModel.turkishRange(for: charIndex)
-        turkishTextView.attributedText = viewModel.highlightedTurkishText(at: wordRange)
-        englishTextView.attributedText = viewModel.highlightedEnglishText(at: wordRange)
-    }
-    
-    @objc private func handleEnglishTap(_ sender: UITapGestureRecognizer) {
-        let textView = sender.view as! UITextView
-        let layoutManager = textView.layoutManager
-        var location = sender.location(in: textView)
-        location.x -= textView.textContainerInset.left
-        location.y -= textView.textContainerInset.top
-        let charIndex = layoutManager.characterIndex(for: location, in: textView.textContainer, fractionOfDistanceBetweenInsertionPoints: nil)
-        let wordRange = viewModel.englishRange(for: charIndex)
-        turkishTextView.attributedText = viewModel.highlightedTurkishText(at: wordRange)
-        englishTextView.attributedText = viewModel.highlightedEnglishText(at: wordRange)
-    }
-}
-/*
-import UIKit
-
-class ViewController: UIViewController {
-    
-    let englishTextView: UITextView = {
-        let textView = UITextView()
-        textView.translatesAutoresizingMaskIntoConstraints = false
-        //textView.font = UIFont.systemFont(ofSize: 20)
-        textView.font = .boldSystemFont(ofSize: 20)
-        textView.isEditable = false
-        return textView
-    }()
-    
-    let turkishTextView: UITextView = {
-        let textView = UITextView()
-        textView.translatesAutoresizingMaskIntoConstraints = false
-        textView.font = UIFont.systemFont(ofSize: 20)
-        textView.isEditable = false
-        return textView
-    }()
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = . white
-        view.addSubview(englishTextView)
-        view.addSubview(turkishTextView)
-        
-        let text1 = "Bu bir örnek metin. Bu metinde iki cümle var. İlk cümle burada. İkinci cümle ise burada."
-        
-        let text2 = "Bu bir örnek metin2. Bu metinde iki cümle var2. İlk cümle burada. İkinci cümle ise burada2."
-        englishTextView.text = text1
-        turkishTextView.text = text2
-        
-        let englishTapGestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(textViewLongPressed(_:)))
-        englishTapGestureRecognizer.minimumPressDuration = 0.3 // minimum time the user must press
-        englishTextView.addGestureRecognizer(englishTapGestureRecognizer)
-        
-        let turkishTapGestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(textViewLongPressed(_:)))
-        turkishTapGestureRecognizer.minimumPressDuration = 0.3 // minimum time the user must press
-        turkishTextView.addGestureRecognizer(turkishTapGestureRecognizer)
-        
-        NSLayoutConstraint.activate([
-            englishTextView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            englishTextView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            englishTextView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            englishTextView.heightAnchor.constraint(equalToConstant: 200),
-            
-            turkishTextView.topAnchor.constraint(equalTo: englishTextView.bottomAnchor, constant: 20),
-            turkishTextView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            turkishTextView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            turkishTextView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
-            turkishTextView.heightAnchor.constraint(equalToConstant: 200),
+            textView.topAnchor.constraint(equalTo: view.topAnchor),
+            textView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            textView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            textView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
     }
-    
-    @objc func textViewLongPressed(_ sender: UILongPressGestureRecognizer) {
-        guard let textView = sender.view as? UITextView else { return }
-        
-        if sender.state == .began {
-            let layoutManager = textView.layoutManager
-            var location = sender.location(in: textView)
-            location.x -= textView.textContainerInset.left
-            location.y -= textView.textContainerInset.top
-            
-            let characterIndex = layoutManager.characterIndex(for: location, in: textView.textContainer, fractionOfDistanceBetweenInsertionPoints: nil)
-            let paragraphRange = (textView.text as NSString).paragraphRange(for: NSRange(location: characterIndex, length: 1))
-            
-            let selectedRange = (textView.text as NSString).sentenceRange(at: characterIndex)
-            
-            textView.selectedRange = selectedRange
-            
-            if textView == englishTextView {
-                turkishTextView.selectedRange = selectedRange
-            } else {
-                englishTextView.selectedRange = selectedRange
+    func textViewDidChangeSelection(_ textView: UITextView) {
+        if let selectedRange = textView.selectedTextRange {
+            let selectedText = textView.text(in: selectedRange)
+            if let word = selectedText?.trimmingCharacters(in: .whitespacesAndNewlines) {
+                showAlert(for: word)
             }
-            
-            // remove highlight from previously selected text
-            let attributedText = NSMutableAttributedString(attributedString: textView.attributedText)
-            attributedText.removeAttribute(.backgroundColor, range: NSRange(location: 0, length: attributedText.length))
-            textView.attributedText = attributedText
-            
-            if textView == englishTextView {
-                turkishTextView.attributedText = attributedText
-            } else {
-                englishTextView.attributedText = attributedText
-            }
-            
-            // highlight the selected text and change the background color
-            let attributes: [NSAttributedString.Key: Any] = [.backgroundColor: UIColor.yellow]
-            attributedText.addAttributes(attributes, range: selectedRange)
-            textView.attributedText = attributedText
-            
-            if textView == englishTextView {
-                turkishTextView.attributedText = attributedText
-            } else {
-                englishTextView.attributedText = attributedText
-            }
-            
-            // close the keyboard
-            textView.resignFirstResponder()
         }
     }
-}
-extension NSString {
-    func sentenceRange(at index: Int) -> NSRange {
-        let delimiters = CharacterSet(charactersIn: ".!")
-        let backwardRange = NSRange(location: 0, length: index + 1)
-        let backwardIndex = rangeOfCharacter(from: delimiters, options: .backwards, range: backwardRange).location
-        
-        let forwardRange = NSRange(location: index, length: length - index)
-        let forwardIndex = rangeOfCharacter(from: delimiters, options: [], range: forwardRange).location
-        
-        let sentenceStart = (backwardIndex == NSNotFound) ? 0 : backwardIndex + 1
-        let sentenceEnd = (forwardIndex == NSNotFound) ? length - 1 : forwardIndex
-        
-        return NSRange(location: sentenceStart, length: sentenceEnd - sentenceStart + 1)
-    }
-}*/
     
-
-
-/*import UIKit
-
-class DetailViewController: UIViewController {
-    let exview = detailView()
-
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-            setupUI()
-    }
-    
-    func setupUI(){
+    func showAlert(for word: String) {
+        let alertController = UIAlertController(title: "Kelime", message: word, preferredStyle: .actionSheet)
         
-        self.view.addSubview(exview)
-        self.exview.backgroundColor = .systemBackground
-
-        exview.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            exview.topAnchor.constraint(equalTo: view.topAnchor),
-            exview.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            exview.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            exview.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+        // Mesaj etiketini seçin ve özelliklerini değiştirin
+        let attributedString = NSAttributedString(string: word, attributes: [
+            NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 35.0),
+            NSAttributedString.Key.foregroundColor : UIColor.red
         ])
+        alertController.setValue(attributedString, forKey: "attributedMessage")
+        
+        let okAction = UIAlertAction(title: "Sözlüğüme Kaydet", style: .cancel, handler: { [weak self] _ in
+            // Temizleme işlemi
+            self?.textView.selectedTextRange = nil
+        })
+        
+        let cancelAction = UIAlertAction(title: "Kaydetme", style: .destructive, handler: { [weak self] _ in
+            // Temizleme işlemi
+            self?.textView.selectedTextRange = nil
+        })
+        alertController.addAction(okAction)
+        alertController.addAction(cancelAction)
+        present(alertController, animated: true, completion: nil)
     }
 }
-*/
+
