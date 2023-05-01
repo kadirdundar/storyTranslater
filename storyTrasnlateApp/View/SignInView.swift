@@ -61,6 +61,14 @@ class SingUpView: UIView {
        
         return button
     }()
+    
+    let logoImageView: UIImageView = {
+        let imageView = UIImageView(image: UIImage(named: "Image"))
+        imageView.contentMode = .scaleAspectFit
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        
+        return imageView
+    }()
 
 
     
@@ -76,7 +84,7 @@ class SingUpView: UIView {
         addSubview(emailTextField)
         addSubview(passwordTextField)
         addSubview(confirmPasswordTextField)
-    
+        addSubview(logoImageView)
         addSubview(submitButton)
        
        
@@ -84,7 +92,7 @@ class SingUpView: UIView {
        
 
         NSLayoutConstraint.activate([
-            emailTextField.topAnchor.constraint(equalTo: appName.bottomAnchor, constant: 150),
+            emailTextField.topAnchor.constraint(equalTo: appName.bottomAnchor, constant: 100),
             emailTextField.leftAnchor.constraint(equalTo: leftAnchor, constant: 32),
             emailTextField.rightAnchor.constraint(equalTo: rightAnchor, constant: -32),
             emailTextField.heightAnchor.constraint(equalToConstant: 50),
@@ -104,10 +112,13 @@ class SingUpView: UIView {
             submitButton.rightAnchor.constraint(equalTo: rightAnchor, constant: -32),
             submitButton.heightAnchor.constraint(equalToConstant: 50),
             
-            appName.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 32),
+            appName.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: 17),
             appName.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor),
             
-       
+            logoImageView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 22),
+            logoImageView.centerXAnchor.constraint(equalTo: centerXAnchor),
+            logoImageView.heightAnchor.constraint(equalToConstant: 60),
+
       
         ])
     }

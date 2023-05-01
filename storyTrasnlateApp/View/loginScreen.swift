@@ -25,6 +25,8 @@ class LoginView: UIView {
         tf.borderStyle = .roundedRect
         tf.font = UIFont.systemFont(ofSize: 14)
         tf.addTarget(self, action: #selector(handleTextInputChange), for: .editingChanged)
+        tf.translatesAutoresizingMaskIntoConstraints = false
+
         return tf
     }()
 
@@ -36,17 +38,21 @@ class LoginView: UIView {
         tf.borderStyle = .roundedRect
         tf.font = UIFont.systemFont(ofSize: 14)
         tf.addTarget(self, action: #selector(handleTextInputChange), for: .editingChanged)
+        tf.translatesAutoresizingMaskIntoConstraints = false
+
         return tf
     }()
 
     let loginButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Log In", for: .normal)
-        button.backgroundColor = UIColor(red: 149/255, green: 204/255, blue: 244/255, alpha: 1)
+        button.backgroundColor = .black
         button.layer.cornerRadius = 5
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
         button.setTitleColor(.white, for: .normal)
         button.addTarget(self, action: #selector(handleLogin), for: .touchUpInside)
+        button.translatesAutoresizingMaskIntoConstraints = false
+
         return button
     }()
  
@@ -63,26 +69,34 @@ class LoginView: UIView {
     let signUpButton: UIButton = {
             let button = UIButton(type: .system)
             button.setTitle("Kaydol", for: .normal)
-            button.setTitleColor(UIColor(red: 17/255, green: 154/255, blue: 237/255, alpha: 1), for: .normal)
+        button.setTitleColor(.black, for: .normal)
             button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
             button.translatesAutoresizingMaskIntoConstraints = false
             button.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
             return button
         }()
     
-    let googleButton : UIButton = {
+    let googleButton: UIButton = {
         let button = UIButton(type: .custom)
-        let googleImage = UIImage(named: "sign-in-with-google-icon-3.jpg")
+        let googleImage = UIImage(named: "google-d33f9eb20af60f124ea3de0def9116700064e558db8a63275354162d46ae09cb")
+    
         button.setImage(googleImage, for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.layer.cornerRadius = 5
-        button.contentMode = .scaleAspectFit
-        
-        //button.backgroundColor = .systemBlue
+        button.contentMode = .scaleAspectFill
+        button.backgroundColor = .systemBackground
+        button.layer.masksToBounds = true
         return button
     }()
-
-
+    
+    let logoImageView: UIImageView = {
+        let imageView = UIImageView(image: UIImage(named: "Image"))
+        imageView.contentMode = .scaleAspectFit
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        
+        return imageView
+    }()
+  
     // MARK: - Init
 
     override init(frame: CGRect) {
@@ -97,14 +111,12 @@ class LoginView: UIView {
         addSubview(signUpLabel)
         addSubview(signUpButton)
         addSubview(googleButton)
+        addSubview(logoImageView)
        
 
-        emailTextField.translatesAutoresizingMaskIntoConstraints = false
-        passwordTextField.translatesAutoresizingMaskIntoConstraints = false
-        loginButton.translatesAutoresizingMaskIntoConstraints = false
 
         NSLayoutConstraint.activate([
-            emailTextField.topAnchor.constraint(equalTo: appName.topAnchor, constant: 150),
+            emailTextField.topAnchor.constraint(equalTo: appName.bottomAnchor, constant: 60),
             emailTextField.leftAnchor.constraint(equalTo: leftAnchor, constant: 32),
             emailTextField.rightAnchor.constraint(equalTo: rightAnchor, constant: -32),
             emailTextField.heightAnchor.constraint(equalToConstant: 50),
@@ -115,24 +127,33 @@ class LoginView: UIView {
             passwordTextField.heightAnchor.constraint(equalToConstant: 50),
 
             loginButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 24),
-            loginButton.leftAnchor.constraint(equalTo: leftAnchor, constant: 32),
-            loginButton.rightAnchor.constraint(equalTo: rightAnchor, constant: -32),
+            loginButton.leftAnchor.constraint(equalTo: leftAnchor, constant: 72),
+            loginButton.rightAnchor.constraint(equalTo: rightAnchor, constant: -72),
             loginButton.heightAnchor.constraint(equalToConstant: 50),
             
-            appName.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 32),
+            appName.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: 12),
             appName.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor),
             
-            signUpLabel.topAnchor.constraint(equalTo: loginButton.bottomAnchor, constant: 12),
-            signUpLabel.centerXAnchor.constraint(equalTo: centerXAnchor, constant: -40),
+            signUpLabel.topAnchor.constraint(equalTo: googleButton.bottomAnchor, constant: 12),
+            signUpLabel.centerXAnchor.constraint(equalTo: centerXAnchor, constant: -35),
                         
-            signUpButton.topAnchor.constraint(equalTo: loginButton.bottomAnchor, constant: 8),
+            signUpButton.topAnchor.constraint(equalTo: googleButton.bottomAnchor, constant: 6),
             signUpButton.leftAnchor.constraint(equalTo: signUpLabel.rightAnchor, constant: 4),
             
-            googleButton.topAnchor.constraint(equalTo: signUpButton.bottomAnchor,constant: 16),
+            googleButton.topAnchor.constraint(equalTo: loginButton.bottomAnchor, constant: 16),
             googleButton.centerXAnchor.constraint(equalTo: centerXAnchor),
-            googleButton.leftAnchor.constraint(equalTo: leftAnchor, constant: 32),
-            googleButton.rightAnchor.constraint(equalTo: rightAnchor, constant: -32),
+            googleButton.leftAnchor.constraint(equalTo: leftAnchor, constant: 72),
+            googleButton.rightAnchor.constraint(equalTo: rightAnchor, constant: -72),
+            googleButton.heightAnchor.constraint(equalToConstant: 50),
+            
+            logoImageView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor , constant: 32),
+            logoImageView.centerXAnchor.constraint(equalTo: centerXAnchor),
+            logoImageView.heightAnchor.constraint(equalToConstant: 70),
+            
+            
+            
 
+    
           
         
       

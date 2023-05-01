@@ -36,10 +36,16 @@ class ViewController: UIViewController, UITextViewDelegate {
         setupUI()
         
         
+        
     }
     
     fileprivate func setupUI() {
         view.addSubview(textView)
+        
+        navigationController?.navigationBar.prefersLargeTitles = true
+        
+        view.backgroundColor = .white
+        title = "Hikaye İsmi"
         
         
         NSLayoutConstraint.activate([
@@ -49,6 +55,8 @@ class ViewController: UIViewController, UITextViewDelegate {
             textView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
     }
+    
+
     func textViewDidChangeSelection(_ textView: UITextView) {
         if let selectedRange = textView.selectedTextRange {
             let selectedText = textView.text(in: selectedRange)
