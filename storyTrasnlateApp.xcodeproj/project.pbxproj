@@ -26,6 +26,7 @@
 		3F7AA7D029E0C00E002DB07B /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7AA7CF29E0C00E002DB07B /* HomePageViewController.swift */; };
 		3F7AA7D229E0C05C002DB07B /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7AA7D129E0C05C002DB07B /* SettingsViewController.swift */; };
 		3FB38AEB29E44FB2002048E9 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB38AEA29E44FB2002048E9 /* DetailViewModel.swift */; };
+		3FC63DCE2A029EF40047C23A /* data.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3FC63DCC2A029EF40047C23A /* data.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		3F7AA7CF29E0C00E002DB07B /* HomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
 		3F7AA7D129E0C05C002DB07B /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		3FB38AEA29E44FB2002048E9 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		3FC63DCD2A029EF40047C23A /* data.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = data.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 				3F0FD8D929DADDCD00210A2C /* Assets.xcassets */,
 				3F0FD8DB29DADDCD00210A2C /* LaunchScreen.storyboard */,
 				3F0FD8DE29DADDCD00210A2C /* Info.plist */,
+				3FC63DCC2A029EF40047C23A /* data.xcdatamodeld */,
 			);
 			path = storyTrasnlateApp;
 			sourceTree = "<group>";
@@ -220,6 +223,7 @@
 				3F46375E29DF06C900447CFA /* LogInViewModel.swift in Sources */,
 				3F0FD8D129DADDCC00210A2C /* AppDelegate.swift in Sources */,
 				3F0FD8D329DADDCC00210A2C /* SceneDelegate.swift in Sources */,
+				3FC63DCE2A029EF40047C23A /* data.xcdatamodeld in Sources */,
 				3F7AA7D029E0C00E002DB07B /* HomePageViewController.swift in Sources */,
 				3F0FD8E929DC5F2600210A2C /* SignInView.swift in Sources */,
 				3F138D5729E2D1C6009A2DB6 /* DetailView.swift in Sources */,
@@ -431,6 +435,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		3FC63DCC2A029EF40047C23A /* data.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				3FC63DCD2A029EF40047C23A /* data.xcdatamodel */,
+			);
+			currentVersion = 3FC63DCD2A029EF40047C23A /* data.xcdatamodel */;
+			path = data.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 3F0FD8C529DADDCC00210A2C /* Project object */;
 }

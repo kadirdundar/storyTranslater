@@ -6,13 +6,14 @@
 //
 
 import UIKit
-
+import CoreData
 class DI_ctionaryViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         setupUI()
+        getData()
         
     }
     
@@ -22,6 +23,24 @@ class DI_ctionaryViewController: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         title = "Dictionary"
         
+    }
+    
+    func getData(){
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
+        let fetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Dictionaryy")
+        fetch.returnsObjectsAsFaults = false
+        
+        do {
+            let sonuc = try context.fetch(fetch)
+            for sonuc in sonuc as! [NSManagedObject]{
+                let kelime = sonuc.value(forKey: "turkishWord") as? String
+                print(kelime)
+            }
+        } catch  {
+            print("hata var")
+        }
     }
   
 

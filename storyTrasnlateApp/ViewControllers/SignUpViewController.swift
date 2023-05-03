@@ -9,7 +9,7 @@ import UIKit
 
 class SignUpViewController: UIViewController {
     let signUpView = SingUpView()
-
+    let exview = SingUpView()
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -31,7 +31,15 @@ class SignUpViewController: UIViewController {
         ])
         
     }
-
+  /*  private func setupbuttons() {
+        exview.loginButtonTappedCallback = { [self] in
+            self.performTabBarVC()
+        }
+           exview.submitButtonTapped = { [self] in
+               self.performSegueToHedefViewController()
+           }
+       }
+   */
 
 
 }

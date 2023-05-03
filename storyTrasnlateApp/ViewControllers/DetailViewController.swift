@@ -5,8 +5,9 @@
 //  Created by Kadir Dündar on 9.04.2023.
 //
 import UIKit
+import CoreData
 
-class ViewController: UIViewController, UITextViewDelegate {
+class ViewController: UIViewController, UITextViewDelegate, UINavigationControllerDelegate{
     
     let textView: UITextView = {
         let tv = UITextView()
@@ -77,8 +78,22 @@ class ViewController: UIViewController, UITextViewDelegate {
         alertController.setValue(attributedString, forKey: "attributedMessage")
         
         let okAction = UIAlertAction(title: "Sözlüğüme Kaydet", style: .cancel, handler: { [weak self] _ in
-            // Temizleme işlemi
+            
             self?.textView.selectedTextRange = nil
+            
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            let context = appDelegate.persistentContainer.viewContext
+            
+            let Sword = NSEntityDescription.insertNewObject(forEntityName: "Dictionaryy", into: context)
+            Sword.setValue(word , forKey: "turkishWord")
+            Sword.setValue(UUID(), forKey: "id")
+            
+            do {
+                try context.save()
+                print("kayıt edildi")
+            } catch  {
+                print("hata")
+            }
         })
         
         let cancelAction = UIAlertAction(title: "Kaydetme", style: .destructive, handler: { [weak self] _ in
