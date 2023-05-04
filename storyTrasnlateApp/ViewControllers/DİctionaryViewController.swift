@@ -9,12 +9,14 @@ import UIKit
 import CoreData
 class DI_ctionaryViewController: UIViewController {
     
+    let dictView = DictView()
+    let viewModel = DictionaryViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupUI()
-        getData()
-        
+        configure()
     }
     
     func setupUI(){
@@ -23,9 +25,19 @@ class DI_ctionaryViewController: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         title = "Dictionary"
         
+        self.view.addSubview(dictView)
+        dictView.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            dictView.topAnchor.constraint(equalTo: view.topAnchor, constant: 200),
+            dictView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -150),
+            dictView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 30),
+            dictView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -30)
+        ])
+        
     }
     
-    func getData(){
+    /*func getData(){
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
         
@@ -42,6 +54,16 @@ class DI_ctionaryViewController: UIViewController {
             print("hata var")
         }
     }
-  
+  */
+    
+    func configure()  {
+        viewModel.fetchData {
+            if let firstWord = self.viewModel.dictionary.first?.value(forKey: "turkishWord") as? String {
+                        DispatchQueue.main.async {
+                            self.dictView.word.text = firstWord
+                        }
+                    }
+                }
+    }
 
 }

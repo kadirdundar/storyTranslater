@@ -17,6 +17,8 @@
 		3F0FD8EC29DC64DD00210A2C /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0FD8EB29DC64DD00210A2C /* SignUpViewController.swift */; };
 		3F138D5529E2D191009A2DB6 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F138D5429E2D191009A2DB6 /* DetailViewController.swift */; };
 		3F138D5729E2D1C6009A2DB6 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F138D5629E2D1C6009A2DB6 /* DetailView.swift */; };
+		3F2625672A03E1F8003B7637 /* DictScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2625662A03E1F8003B7637 /* DictScreen.swift */; };
+		3F2625692A03FD24003B7637 /* DictViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2625682A03FD24003B7637 /* DictViewModel.swift */; };
 		3F2BACDE29E1570B00FD248E /* DİctionaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2BACDD29E1570B00FD248E /* DİctionaryViewController.swift */; };
 		3F2BACE029E17A6F00FD248E /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2BACDF29E17A6F00FD248E /* TableViewCell.swift */; };
 		3F46375C29DF068F00447CFA /* userModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F46375B29DF068F00447CFA /* userModel.swift */; };
@@ -42,6 +44,8 @@
 		3F0FD8EB29DC64DD00210A2C /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		3F138D5429E2D191009A2DB6 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		3F138D5629E2D1C6009A2DB6 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		3F2625662A03E1F8003B7637 /* DictScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictScreen.swift; sourceTree = "<group>"; };
+		3F2625682A03FD24003B7637 /* DictViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictViewModel.swift; sourceTree = "<group>"; };
 		3F2BACDD29E1570B00FD248E /* DİctionaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DİctionaryViewController.swift"; sourceTree = "<group>"; };
 		3F2BACDF29E17A6F00FD248E /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		3F46375B29DF068F00447CFA /* userModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userModel.swift; sourceTree = "<group>"; };
@@ -105,6 +109,7 @@
 				3F0FD8E829DC5F2600210A2C /* SignInView.swift */,
 				3F2BACDF29E17A6F00FD248E /* TableViewCell.swift */,
 				3F138D5629E2D1C6009A2DB6 /* DetailView.swift */,
+				3F2625662A03E1F8003B7637 /* DictScreen.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -137,6 +142,7 @@
 			children = (
 				3F46375D29DF06C900447CFA /* LogInViewModel.swift */,
 				3FB38AEA29E44FB2002048E9 /* DetailViewModel.swift */,
+				3F2625682A03FD24003B7637 /* DictViewModel.swift */,
 			);
 			name = "VİewModel";
 			path = "VİewModel";
@@ -214,6 +220,7 @@
 			files = (
 				3F2BACE029E17A6F00FD248E /* TableViewCell.swift in Sources */,
 				3F0FD8EC29DC64DD00210A2C /* SignUpViewController.swift in Sources */,
+				3F2625692A03FD24003B7637 /* DictViewModel.swift in Sources */,
 				3F0FD8D529DADDCC00210A2C /* firstScreen.swift in Sources */,
 				3F2BACDE29E1570B00FD248E /* DİctionaryViewController.swift in Sources */,
 				3F7AA7D229E0C05C002DB07B /* SettingsViewController.swift in Sources */,
@@ -226,6 +233,7 @@
 				3FC63DCE2A029EF40047C23A /* data.xcdatamodeld in Sources */,
 				3F7AA7D029E0C00E002DB07B /* HomePageViewController.swift in Sources */,
 				3F0FD8E929DC5F2600210A2C /* SignInView.swift in Sources */,
+				3F2625672A03E1F8003B7637 /* DictScreen.swift in Sources */,
 				3F138D5729E2D1C6009A2DB6 /* DetailView.swift in Sources */,
 				3F5FF5B629E9946000BC4A5C /* DetailModel.swift in Sources */,
 				3F138D5529E2D191009A2DB6 /* DetailViewController.swift in Sources */,
