@@ -7,14 +7,15 @@
 
 import UIKit
 
-
 class DictView: UIView {
 
     // MARK: - Properties
     
-    let word : UILabel = {
+    var word : UILabel = {
        let word = UILabel()
         word.translatesAutoresizingMaskIntoConstraints = false
+        word.font = UIFont.boldSystemFont(ofSize: 30)
+        word.textColor = .white
        
         return word
     }()
@@ -27,8 +28,7 @@ class DictView: UIView {
         addSubview(word)
         
         backgroundColor = .systemRed
-        layer.cornerRadius = 5
-
+        layer.cornerRadius = 10
 
 
         NSLayoutConstraint.activate([
@@ -42,7 +42,49 @@ class DictView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     // MARK: - Actions
+    
+    
+    func updateWord(with newWord: String) {
+        word.text = newWord
+    }
+    
+  /*  func updateWord(with newWord: String) {   kartın arka yüzünü göstermek için
+        let newWordLabel = UILabel()
+        newWordLabel.translatesAutoresizingMaskIntoConstraints = false
+        newWordLabel.text = newWord
 
-   
+        addSubview(newWordLabel)
+        NSLayoutConstraint.activate([
+            newWordLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
+            newWordLabel.centerXAnchor.constraint(equalTo: centerXAnchor)
+        ])
+
+        UIView.transition(from: word, to: newWordLabel, duration: 0.3, options: [.transitionFlipFromRight, .showHideTransitionViews], completion: { [weak self] _ in
+            self?.word.removeFromSuperview()
+            self?.word = newWordLabel
+        })
+    }*/
+    
+    /*    func updateWord(with newWord: String) {
+     let newWordLabel = UILabel()
+     newWordLabel.translatesAutoresizingMaskIntoConstraints = false
+     newWordLabel.text = newWord
+     
+     let xPosition = self.frame.width
+     let yPosition = self.frame.height / 2.0
+     let animationDuration = 0.5
+     
+     newWordLabel.frame = CGRect(x: xPosition, y: yPosition, width: 0, height: 0)
+     addSubview(newWordLabel)
+     
+     UIView.animate(withDuration: animationDuration) { [weak self] in
+         newWordLabel.frame = CGRect(x: 0, y: yPosition, width: self?.frame.width ?? 0, height: self?.frame.height ?? 0)
+         self?.frame = CGRect(x: -xPosition, y: self?.frame.origin.y ?? 0, width: self?.frame.width ?? 0, height: self?.frame.height ?? 0)
+     } completion: { [weak self] _ in
+         self?.word.removeFromSuperview()
+         self?.word = newWordLabel
+         self?.frame = CGRect(x: 0, y: self?.frame.origin.y ?? 0, width: self?.frame.width ?? 0, height: self?.frame.height ?? 0)
+     }
+ }*/
 }
 
