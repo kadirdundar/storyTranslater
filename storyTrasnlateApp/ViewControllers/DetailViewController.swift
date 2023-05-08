@@ -72,7 +72,7 @@ class ViewController: UIViewController, UITextViewDelegate, UINavigationControll
         
         // Mesaj etiketini seçin ve özelliklerini değiştirin
         let attributedString = NSAttributedString(string: word, attributes: [
-            NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 35.0),
+            NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 25.0),
             NSAttributedString.Key.foregroundColor : UIColor.red
         ])
         alertController.setValue(attributedString, forKey: "attributedMessage")
