@@ -8,7 +8,7 @@
 import UIKit
 import CoreData
 
-class DI_ctionaryViewController: UIViewController {
+class FlashCardsVC: UIViewController {
     
     let dictView = DictView()
     

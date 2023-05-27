@@ -9,7 +9,6 @@ import UIKit
 
 class SignUpViewController: UIViewController {
     let signUpView = SingUpView()
-    let exview = SingUpView()
     override func viewDidLoad() {
         super.viewDidLoad()
 

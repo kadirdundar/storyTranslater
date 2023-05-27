@@ -6,7 +6,7 @@
 //
 
 import UIKit
-class firstScreen: UIViewController {
+class LoginViewController: UIViewController {
 
   let viewModel = LoginViewModel()
   let exview = LoginView()

@@ -9,17 +9,17 @@
 /* Begin PBXBuildFile section */
 		3F0FD8D129DADDCC00210A2C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0FD8D029DADDCC00210A2C /* AppDelegate.swift */; };
 		3F0FD8D329DADDCC00210A2C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0FD8D229DADDCC00210A2C /* SceneDelegate.swift */; };
-		3F0FD8D529DADDCC00210A2C /* firstScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0FD8D429DADDCC00210A2C /* firstScreen.swift */; };
+		3F0FD8D529DADDCC00210A2C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0FD8D429DADDCC00210A2C /* LoginViewController.swift */; };
 		3F0FD8DA29DADDCD00210A2C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F0FD8D929DADDCD00210A2C /* Assets.xcassets */; };
 		3F0FD8DD29DADDCD00210A2C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F0FD8DB29DADDCD00210A2C /* LaunchScreen.storyboard */; };
-		3F0FD8E629DAE3FA00210A2C /* loginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0FD8E529DAE3FA00210A2C /* loginScreen.swift */; };
+		3F0FD8E629DAE3FA00210A2C /* loginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0FD8E529DAE3FA00210A2C /* loginView.swift */; };
 		3F0FD8E929DC5F2600210A2C /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0FD8E829DC5F2600210A2C /* SignInView.swift */; };
 		3F0FD8EC29DC64DD00210A2C /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0FD8EB29DC64DD00210A2C /* SignUpViewController.swift */; };
 		3F138D5529E2D191009A2DB6 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F138D5429E2D191009A2DB6 /* DetailViewController.swift */; };
 		3F138D5729E2D1C6009A2DB6 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F138D5629E2D1C6009A2DB6 /* DetailView.swift */; };
 		3F2625672A03E1F8003B7637 /* DictScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2625662A03E1F8003B7637 /* DictScreen.swift */; };
 		3F2625692A03FD24003B7637 /* DictViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2625682A03FD24003B7637 /* DictViewModel.swift */; };
-		3F2BACDE29E1570B00FD248E /* DİctionaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2BACDD29E1570B00FD248E /* DİctionaryViewController.swift */; };
+		3F2BACDE29E1570B00FD248E /* DİctionaryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2BACDD29E1570B00FD248E /* DİctionaryVC.swift */; };
 		3F2BACE029E17A6F00FD248E /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2BACDF29E17A6F00FD248E /* TableViewCell.swift */; };
 		3F46375C29DF068F00447CFA /* userModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F46375B29DF068F00447CFA /* userModel.swift */; };
 		3F46375E29DF06C900447CFA /* LogInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F46375D29DF06C900447CFA /* LogInViewModel.swift */; };
@@ -35,18 +35,18 @@
 		3F0FD8CD29DADDCC00210A2C /* storyTrasnlateApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = storyTrasnlateApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F0FD8D029DADDCC00210A2C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3F0FD8D229DADDCC00210A2C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		3F0FD8D429DADDCC00210A2C /* firstScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = firstScreen.swift; sourceTree = "<group>"; };
+		3F0FD8D429DADDCC00210A2C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		3F0FD8D929DADDCD00210A2C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3F0FD8DC29DADDCD00210A2C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3F0FD8DE29DADDCD00210A2C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3F0FD8E529DAE3FA00210A2C /* loginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginScreen.swift; sourceTree = "<group>"; };
+		3F0FD8E529DAE3FA00210A2C /* loginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginView.swift; sourceTree = "<group>"; };
 		3F0FD8E829DC5F2600210A2C /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		3F0FD8EB29DC64DD00210A2C /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		3F138D5429E2D191009A2DB6 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		3F138D5629E2D1C6009A2DB6 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		3F2625662A03E1F8003B7637 /* DictScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictScreen.swift; sourceTree = "<group>"; };
 		3F2625682A03FD24003B7637 /* DictViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictViewModel.swift; sourceTree = "<group>"; };
-		3F2BACDD29E1570B00FD248E /* DİctionaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DİctionaryViewController.swift"; sourceTree = "<group>"; };
+		3F2BACDD29E1570B00FD248E /* DİctionaryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DİctionaryVC.swift"; sourceTree = "<group>"; };
 		3F2BACDF29E17A6F00FD248E /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		3F46375B29DF068F00447CFA /* userModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userModel.swift; sourceTree = "<group>"; };
 		3F46375D29DF06C900447CFA /* LogInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewModel.swift; sourceTree = "<group>"; };
@@ -88,10 +88,12 @@
 		3F0FD8CF29DADDCC00210A2C /* storyTrasnlateApp */ = {
 			isa = PBXGroup;
 			children = (
-				3F46375A29DF067300447CFA /* VİewModel */,
-				3F46375929DF066900447CFA /* Model */,
-				3F0FD8EA29DC64AF00210A2C /* ViewControllers */,
-				3F0FD8E429DAE3DD00210A2C /* View */,
+				3F96FA482A1D04D30098C6FA /* DetailPage */,
+				3F96FA472A1D049D0098C6FA /* HomePage */,
+				3F96FA462A1D02D50098C6FA /* SettingsPage */,
+				3F96FA452A1D02AC0098C6FA /* FlashCardPage */,
+				3F96FA432A1D02950098C6FA /* SignInPage */,
+				3F96FA422A1D028D0098C6FA /* LoginPage */,
 				3F0FD8D029DADDCC00210A2C /* AppDelegate.swift */,
 				3F0FD8D229DADDCC00210A2C /* SceneDelegate.swift */,
 				3F0FD8D929DADDCD00210A2C /* Assets.xcassets */,
@@ -102,50 +104,63 @@
 			path = storyTrasnlateApp;
 			sourceTree = "<group>";
 		};
-		3F0FD8E429DAE3DD00210A2C /* View */ = {
-			isa = PBXGroup;
-			children = (
-				3F0FD8E529DAE3FA00210A2C /* loginScreen.swift */,
-				3F0FD8E829DC5F2600210A2C /* SignInView.swift */,
-				3F2BACDF29E17A6F00FD248E /* TableViewCell.swift */,
-				3F138D5629E2D1C6009A2DB6 /* DetailView.swift */,
-				3F2625662A03E1F8003B7637 /* DictScreen.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		3F0FD8EA29DC64AF00210A2C /* ViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-				3F0FD8D429DADDCC00210A2C /* firstScreen.swift */,
-				3F0FD8EB29DC64DD00210A2C /* SignUpViewController.swift */,
-				3F7AA7CD29E0BCEE002DB07B /* TabBarViewController.swift */,
-				3F7AA7CF29E0C00E002DB07B /* HomePageViewController.swift */,
-				3F7AA7D129E0C05C002DB07B /* SettingsViewController.swift */,
-				3F2BACDD29E1570B00FD248E /* DİctionaryViewController.swift */,
-				3F138D5429E2D191009A2DB6 /* DetailViewController.swift */,
-			);
-			path = ViewControllers;
-			sourceTree = "<group>";
-		};
-		3F46375929DF066900447CFA /* Model */ = {
+		3F96FA422A1D028D0098C6FA /* LoginPage */ = {
 			isa = PBXGroup;
 			children = (
 				3F46375B29DF068F00447CFA /* userModel.swift */,
-				3F5FF5B529E9946000BC4A5C /* DetailModel.swift */,
+				3F46375D29DF06C900447CFA /* LogInViewModel.swift */,
+				3F0FD8D429DADDCC00210A2C /* LoginViewController.swift */,
+				3F0FD8E529DAE3FA00210A2C /* loginView.swift */,
 			);
-			path = Model;
+			path = LoginPage;
 			sourceTree = "<group>";
 		};
-		3F46375A29DF067300447CFA /* VİewModel */ = {
+		3F96FA432A1D02950098C6FA /* SignInPage */ = {
 			isa = PBXGroup;
 			children = (
-				3F46375D29DF06C900447CFA /* LogInViewModel.swift */,
-				3FB38AEA29E44FB2002048E9 /* DetailViewModel.swift */,
+				3F0FD8EB29DC64DD00210A2C /* SignUpViewController.swift */,
+				3F0FD8E829DC5F2600210A2C /* SignInView.swift */,
+			);
+			path = SignInPage;
+			sourceTree = "<group>";
+		};
+		3F96FA452A1D02AC0098C6FA /* FlashCardPage */ = {
+			isa = PBXGroup;
+			children = (
+				3F2BACDD29E1570B00FD248E /* DİctionaryVC.swift */,
+				3F2625662A03E1F8003B7637 /* DictScreen.swift */,
 				3F2625682A03FD24003B7637 /* DictViewModel.swift */,
 			);
-			name = "VİewModel";
-			path = "VİewModel";
+			path = FlashCardPage;
+			sourceTree = "<group>";
+		};
+		3F96FA462A1D02D50098C6FA /* SettingsPage */ = {
+			isa = PBXGroup;
+			children = (
+				3F7AA7D129E0C05C002DB07B /* SettingsViewController.swift */,
+			);
+			path = SettingsPage;
+			sourceTree = "<group>";
+		};
+		3F96FA472A1D049D0098C6FA /* HomePage */ = {
+			isa = PBXGroup;
+			children = (
+				3F2BACDF29E17A6F00FD248E /* TableViewCell.swift */,
+				3F7AA7CD29E0BCEE002DB07B /* TabBarViewController.swift */,
+				3F7AA7CF29E0C00E002DB07B /* HomePageViewController.swift */,
+			);
+			path = HomePage;
+			sourceTree = "<group>";
+		};
+		3F96FA482A1D04D30098C6FA /* DetailPage */ = {
+			isa = PBXGroup;
+			children = (
+				3FB38AEA29E44FB2002048E9 /* DetailViewModel.swift */,
+				3F138D5429E2D191009A2DB6 /* DetailViewController.swift */,
+				3F138D5629E2D1C6009A2DB6 /* DetailView.swift */,
+				3F5FF5B529E9946000BC4A5C /* DetailModel.swift */,
+			);
+			path = DetailPage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -221,11 +236,11 @@
 				3F2BACE029E17A6F00FD248E /* TableViewCell.swift in Sources */,
 				3F0FD8EC29DC64DD00210A2C /* SignUpViewController.swift in Sources */,
 				3F2625692A03FD24003B7637 /* DictViewModel.swift in Sources */,
-				3F0FD8D529DADDCC00210A2C /* firstScreen.swift in Sources */,
-				3F2BACDE29E1570B00FD248E /* DİctionaryViewController.swift in Sources */,
+				3F0FD8D529DADDCC00210A2C /* LoginViewController.swift in Sources */,
+				3F2BACDE29E1570B00FD248E /* DİctionaryVC.swift in Sources */,
 				3F7AA7D229E0C05C002DB07B /* SettingsViewController.swift in Sources */,
 				3F46375C29DF068F00447CFA /* userModel.swift in Sources */,
-				3F0FD8E629DAE3FA00210A2C /* loginScreen.swift in Sources */,
+				3F0FD8E629DAE3FA00210A2C /* loginView.swift in Sources */,
 				3F7AA7CE29E0BCEE002DB07B /* TabBarViewController.swift in Sources */,
 				3F46375E29DF06C900447CFA /* LogInViewModel.swift in Sources */,
 				3F0FD8D129DADDCC00210A2C /* AppDelegate.swift in Sources */,

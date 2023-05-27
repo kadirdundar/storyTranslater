@@ -14,7 +14,7 @@ class TabBarViewController: UITabBarController {
 
         let homePageVC = HomePageViewController()
         let profileVC = SettingsViewController()
-        let dictionaryVC = DI_ctionaryViewController()
+        let dictionaryVC = FlashCardsVC()
                 
         let homePageNavVC = UINavigationController(rootViewController: homePageVC)
         let profileNavVC = UINavigationController(rootViewController: profileVC)
