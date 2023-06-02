@@ -4,7 +4,6 @@
 //
 //  Created by Kadir Dündar on 8.04.2023.
 //
-
 import UIKit
 import CoreData
 
@@ -34,7 +33,7 @@ class FlashCardsVC: UIViewController {
     func setupUI() {
         view.backgroundColor = .white
         navigationController?.navigationBar.prefersLargeTitles = true
-        title = "Dictionary"
+        title = "FlashCards"
         
         self.view.addSubview(dictView)
         
@@ -50,7 +49,7 @@ class FlashCardsVC: UIViewController {
     
     func configure()  {
         viewModel.fetchData {
-            if let firstWord = self.viewModel.dictionary.first?.value(forKey: "turkishWord") as? String {
+            if let firstWord = self.viewModel.dictionary.first?.value(forKey: "englishWord") as? String {
                 DispatchQueue.main.async {
                     self.dictView.updateWord(with: firstWord)
                 }
@@ -81,7 +80,7 @@ class FlashCardsVC: UIViewController {
             
             if newIndex != currentWordIndex {
                 // Yeni kartı arka planda hazırla
-                if let newWord = self.viewModel.dictionary[newIndex].value(forKey: "turkishWord") as? String {
+                if let newWord = self.viewModel.dictionary[newIndex].value(forKey: "englishWord") as? String {
                     self.dictView.updateWord(with: newWord)
                 }
                 
@@ -114,11 +113,11 @@ class FlashCardsVC: UIViewController {
         }
     }
     @objc func handleTap(_ gesture: UITapGestureRecognizer) {
-        // Toggle the language flag
+    
         isTurkish = !isTurkish
         
         // Get the current word
-        if let currentWord = self.viewModel.dictionary[self.currentWordIndex].value(forKey: "turkishWord") as? String {
+        if let currentWord = self.viewModel.dictionary[self.currentWordIndex].value(forKey: "englishWord") as? String {
             self.dictView.updateWord(with: currentWord)
         }
         
@@ -127,9 +126,13 @@ class FlashCardsVC: UIViewController {
         UIView.transition(with: dictView, duration: 0.5, options: transitionOptions, animations: {
             // Set the card to show the current language
             if self.isTurkish {
-                self.dictView.updateWord(with: "Türkçe")
+               if let turkishWord = self.viewModel.dictionary[self.currentWordIndex].value(forKey: "turkishWord") as? String {
+                    self.dictView.updateWord(with: turkishWord)
+                }
+
+                
             } else {
-                if let currentWord = self.viewModel.dictionary[self.currentWordIndex].value(forKey: "turkishWord") as? String {
+                if let currentWord = self.viewModel.dictionary[self.currentWordIndex].value(forKey: "englishWord") as? String {
                     self.dictView.updateWord(with: currentWord)
                 }
             }

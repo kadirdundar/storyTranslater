@@ -12,16 +12,12 @@ class ViewController: UIViewController, UITextViewDelegate, UINavigationControll
     private let viewModel = DetailViewModel()
     private let vieww = DetailView()
     
-    
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         vieww.textView.delegate = self
         setupUI()
         vieww.textView.isSelectable = true
-
-        
         
     }
     
@@ -33,7 +29,6 @@ class ViewController: UIViewController, UITextViewDelegate, UINavigationControll
         view.backgroundColor = .white
         title = "Hikaye İsmi"
         
-        
         NSLayoutConstraint.activate([
             vieww.textView.topAnchor.constraint(equalTo: view.topAnchor),
             vieww.textView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
@@ -41,8 +36,6 @@ class ViewController: UIViewController, UITextViewDelegate, UINavigationControll
             vieww.textView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
     }
-    
-
     func textViewDidChangeSelection(_ textView: UITextView) {
         if let selectedRange = vieww.textView.selectedTextRange {
             let selectedText = vieww.textView.text(in: selectedRange)
@@ -52,6 +45,5 @@ class ViewController: UIViewController, UITextViewDelegate, UINavigationControll
             }
         }
     }
-    
 }
 
