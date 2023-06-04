@@ -21,7 +21,12 @@ class DetailViewModel {
         
         let alert = UIAlertController.alert()
         alert.setTitle("🇬🇧 \(word)", color: .red, size: 30)
-        alert.setMessage("🇹🇷 Türkçe",color: .brown, size: 26)
+        alert.setMessage("🇹🇷       ",color: .brown, size: 26)
+
+        translateWord(word) { turkish in
+        
+            alert.setMessage("🇹🇷 \(turkish)",color: .brown, size: 26)        }
+//        alert.setMessage("🇹🇷 Türkçe",color: .brown, size: 26)
         alert.addAction(
             title: "Sözlüğüme Kaydet",
             systemIcon: "envelope.fill",

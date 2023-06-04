@@ -18,7 +18,8 @@ class ViewController: UIViewController, UITextViewDelegate, UINavigationControll
         vieww.textView.delegate = self
         setupUI()
         vieww.textView.isSelectable = true
-        
+      
+
     }
     
     fileprivate func setupUI() {
@@ -45,5 +46,15 @@ class ViewController: UIViewController, UITextViewDelegate, UINavigationControll
             }
         }
     }
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+            return true
+        }
+
+        override func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {
+            if action == #selector(cut(_:)) || action == #selector(copy(_:)) || action == #selector(paste(_:)) {
+                return false
+            }
+            return super.canPerformAction(action, withSender: sender)
+        }
 }
 
