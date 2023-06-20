@@ -16,6 +16,7 @@
 		3F0FD8E629DAE3FA00210A2C /* loginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0FD8E529DAE3FA00210A2C /* loginView.swift */; };
 		3F0FD8E929DC5F2600210A2C /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0FD8E829DC5F2600210A2C /* SignInView.swift */; };
 		3F0FD8EC29DC64DD00210A2C /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0FD8EB29DC64DD00210A2C /* SignUpViewController.swift */; };
+		3F11334C2A3DE3660042EEF8 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F11334B2A3DE3660042EEF8 /* CollectionViewCell.swift */; };
 		3F138D5529E2D191009A2DB6 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F138D5429E2D191009A2DB6 /* DetailViewController.swift */; };
 		3F138D5729E2D1C6009A2DB6 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F138D5629E2D1C6009A2DB6 /* DetailView.swift */; };
 		3F2625672A03E1F8003B7637 /* DictScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2625662A03E1F8003B7637 /* DictScreen.swift */; };
@@ -31,6 +32,7 @@
 		3F8881C92A250208005335BE /* extensionAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8881C82A250208005335BE /* extensionAlertController.swift */; };
 		3FB38AEB29E44FB2002048E9 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB38AEA29E44FB2002048E9 /* DetailViewModel.swift */; };
 		3FC63DCE2A029EF40047C23A /* data.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3FC63DCC2A029EF40047C23A /* data.xcdatamodeld */; };
+		3FDE523D2A42031900D08AC4 /* ColorPaletta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDE523C2A42031900D08AC4 /* ColorPaletta.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +47,7 @@
 		3F0FD8E529DAE3FA00210A2C /* loginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginView.swift; sourceTree = "<group>"; };
 		3F0FD8E829DC5F2600210A2C /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		3F0FD8EB29DC64DD00210A2C /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		3F11334B2A3DE3660042EEF8 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		3F138D5429E2D191009A2DB6 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		3F138D5629E2D1C6009A2DB6 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		3F2625662A03E1F8003B7637 /* DictScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictScreen.swift; sourceTree = "<group>"; };
@@ -60,6 +63,7 @@
 		3F8881C82A250208005335BE /* extensionAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensionAlertController.swift; sourceTree = "<group>"; };
 		3FB38AEA29E44FB2002048E9 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		3FC63DCD2A029EF40047C23A /* data.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = data.xcdatamodel; sourceTree = "<group>"; };
+		3FDE523C2A42031900D08AC4 /* ColorPaletta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPaletta.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +126,7 @@
 				3F0FD8DB29DADDCD00210A2C /* LaunchScreen.storyboard */,
 				3F0FD8DE29DADDCD00210A2C /* Info.plist */,
 				3FC63DCC2A029EF40047C23A /* data.xcdatamodeld */,
+				3FDE523C2A42031900D08AC4 /* ColorPaletta.swift */,
 			);
 			path = storyTrasnlateApp;
 			sourceTree = "<group>";
@@ -170,6 +175,7 @@
 				3F2BACDF29E17A6F00FD248E /* TableViewCell.swift */,
 				3F7AA7CD29E0BCEE002DB07B /* TabBarViewController.swift */,
 				3F7AA7CF29E0C00E002DB07B /* HomePageViewController.swift */,
+				3F11334B2A3DE3660042EEF8 /* CollectionViewCell.swift */,
 			);
 			path = HomePage;
 			sourceTree = "<group>";
@@ -277,6 +283,8 @@
 				3F138D5529E2D191009A2DB6 /* DetailViewController.swift in Sources */,
 				3FB38AEB29E44FB2002048E9 /* DetailViewModel.swift in Sources */,
 				3F8881C92A250208005335BE /* extensionAlertController.swift in Sources */,
+				3F11334C2A3DE3660042EEF8 /* CollectionViewCell.swift in Sources */,
+				3FDE523D2A42031900D08AC4 /* ColorPaletta.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

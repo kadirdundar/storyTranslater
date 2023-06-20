@@ -31,7 +31,7 @@ class FlashCardsVC: UIViewController {
     }
     
     func setupUI() {
-        view.backgroundColor = .white
+        view.backgroundColor = .systemBackground
         navigationController?.navigationBar.prefersLargeTitles = true
         title = "FlashCards"
         

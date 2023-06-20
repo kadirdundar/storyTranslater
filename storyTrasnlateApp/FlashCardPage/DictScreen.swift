@@ -27,7 +27,7 @@ class DictView: UIView {
         
         addSubview(word)
         
-        backgroundColor = .systemRed
+        backgroundColor = .color4
         layer.cornerRadius = 10
 
         NSLayoutConstraint.activate([
