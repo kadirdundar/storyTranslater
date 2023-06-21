@@ -20,7 +20,7 @@ class FlashCardsVC: UIViewController {
         
         setupUI()
         configure()
-        
+   
         let panGesture = UIPanGestureRecognizer(target: self, action: #selector(panned(_:)))
         dictView.addGestureRecognizer(panGesture)
         dictView.isUserInteractionEnabled = true
@@ -49,9 +49,10 @@ class FlashCardsVC: UIViewController {
     
     func configure()  {
         viewModel.fetchData {
-            if let firstWord = self.viewModel.dictionary.first?.value(forKey: "englishWord") as? String {
+            if let firstWord = self.viewModel.dictionary.first?.value(forKey: "turkishWord") as? String {
                 DispatchQueue.main.async {
                     self.dictView.updateWord(with: firstWord)
+                    print(firstWord)
                 }
             }
         }
@@ -80,7 +81,7 @@ class FlashCardsVC: UIViewController {
             
             if newIndex != currentWordIndex {
                 // Yeni kartı arka planda hazırla
-                if let newWord = self.viewModel.dictionary[newIndex].value(forKey: "englishWord") as? String {
+                if let newWord = self.viewModel.dictionary[newIndex].value(forKey: "turkishWord") as? String {
                     self.dictView.updateWord(with: newWord)
                 }
                 
@@ -102,7 +103,7 @@ class FlashCardsVC: UIViewController {
                     }
                 }
             } else {
-                // Ekrandan kaydırmayı gerçekleştirmediğimizde kartı eski konumuna getir
+                //  kartı eski konumuna getir
                 UIView.animate(withDuration: 0.3) {
                     self.dictView.transform = .identity
                 }
@@ -126,13 +127,13 @@ class FlashCardsVC: UIViewController {
         UIView.transition(with: dictView, duration: 0.5, options: transitionOptions, animations: {
             // Set the card to show the current language
             if self.isTurkish {
-               if let turkishWord = self.viewModel.dictionary[self.currentWordIndex].value(forKey: "turkishWord") as? String {
+               if let turkishWord = self.viewModel.dictionary[self.currentWordIndex].value(forKey: "englishWord") as? String {
                     self.dictView.updateWord(with: turkishWord)
                 }
 
                 
             } else {
-                if let currentWord = self.viewModel.dictionary[self.currentWordIndex].value(forKey: "englishWord") as? String {
+                if let currentWord = self.viewModel.dictionary[self.currentWordIndex].value(forKey: "turkishWord") as? String {
                     self.dictView.updateWord(with: currentWord)
                 }
             }

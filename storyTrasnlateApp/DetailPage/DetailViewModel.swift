@@ -12,11 +12,7 @@ class DetailViewModel {
     private var words: [Word] = []
      let vieww = DetailView()
         
-        func addWord(_ word: String) {
-            let newWord = Word(turkishWord: "türkçe" , id: UUID(),englishWord:word)//türkçe karşılığ APIdan gelecek
-            words.append(newWord)
-            saveWord(newWord)
-        }
+   
     func showAlert(for word: String) -> UIAlertController {
         
         let alert = UIAlertController.alert()
@@ -25,16 +21,17 @@ class DetailViewModel {
 
         translateWord(word) { turkish in
         
-            alert.setMessage("🇹🇷 \(turkish)",color: .brown, size: 26)        }
-//        alert.setMessage("🇹🇷 Türkçe",color: .brown, size: 26)
-        alert.addAction(
-            title: "Sözlüğüme Kaydet",
-            systemIcon: "envelope.fill",
-            color: .darkGray,
-            leftAligment: true
-        ) {
-            self.addWord(word)
+            alert.setMessage("🇹🇷 \(turkish)",color: .brown, size: 26)
+            alert.addAction(
+                title: "Sözlüğüme Kaydet",
+                systemIcon: "envelope.fill",
+                color: .darkGray,
+                leftAligment: true
+            ) {
+                self.addWord(turkish,word)
+            }
         }
+     
         alert.addAction(
             title: "Kaydetme",
             systemIcon: "trash.fill",
@@ -45,7 +42,11 @@ class DetailViewModel {
         }
         return alert
     }
-
+        private func addWord(_ englishWord: String, _ turkishWord: String) {
+            let newWord = Word(turkishWord: turkishWord , id: UUID(),englishWord:englishWord)
+            words.append(newWord)
+            saveWord(newWord)
+        }
 
         private func saveWord(_ word: Word) {
             
